@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supaBaseClient";
-import { Route } from "react-router-dom";
-import TestPage from "./TestPage";
-import { personalityQuestions } from "../data/personalityQuestions";
 
 const Registration = () => {
   const [name, setName] = useState("");
@@ -19,7 +16,6 @@ const Registration = () => {
       return;
     }
 
-    // Insert user details into Supabase
     const { error } = await supabase.from("users").insert([
       {
         name,
@@ -39,61 +35,58 @@ const Registration = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-2xl font-bold mb-6">Register</h1>
-      {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="mb-4 px-4 py-2 border rounded w-64"
-      />
-      <input
-        type="text"
-        placeholder="Phone Number"
-        value={phoneNo}
-        onChange={(e) => setPhoneNo(e.target.value)}
-        className="mb-4 px-4 py-2 border rounded w-64"
-      />
-      <input
-        type="text"
-        placeholder="Current Educational Qualification"
-        value={currentQualification}
-        onChange={(e) => setCurrentQualification(e.target.value)}
-        className="mb-4 px-4 py-2 border rounded w-64"
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="mb-4 px-4 py-2 border rounded w-64"
-      />
-      <button
-        onClick={handleSubmit}
-        className={`px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 ${
-          !name || !phoneNo || !currentQualification || !email
-            ? "opacity-50 cursor-not-allowed"
-            : ""
-        }`}
-        disabled={!name || !phoneNo || !currentQualification || !email}
-      >
-        Proceed to Personality Test
-      </button>
+    <div
+      className="flex items-center h-screen bg-cover bg-center pl-30"
+      style={{
+        backgroundImage: "url('./public/bg.jpg')",
+        
+      }}
+    >
+      <div className="flex flex-col items-center justify-center w-full max-w-lg bg-white bg-opacity-90 text-gray-800 rounded-lg shadow-lg p-8">
+        <h1 className="text-2xl font-bold mb-6">Register</h1>
+        {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="mb-4 px-4 py-2 border rounded w-full"
+        />
+        <input
+          type="text"
+          placeholder="Phone Number"
+          value={phoneNo}
+          onChange={(e) => setPhoneNo(e.target.value)}
+          className="mb-4 px-4 py-2 border rounded w-full"
+        />
+        <input
+          type="text"
+          placeholder="Current Educational Qualification"
+          value={currentQualification}
+          onChange={(e) => setCurrentQualification(e.target.value)}
+          className="mb-4 px-4 py-2 border rounded w-full"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="mb-4 px-4 py-2 border rounded w-full"
+        />
+        <button
+          onClick={handleSubmit}
+          className={`px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 w-full ${
+            !name || !phoneNo || !currentQualification || !email
+              ? "opacity-50 cursor-not-allowed"
+              : ""
+          }`}
+          disabled={!name || !phoneNo || !currentQualification || !email}
+        >
+          Proceed to Personality Test
+        </button>
+      </div>
     </div>
   );
 };
 
-const AppRoutes = () => {
-  return (
-    <Route
-      exact
-      path="/personality"
-      element={<TestPage title="Personality Test" questions={personalityQuestions} />}
-    />
-  );
-};
-
-export { AppRoutes };
 export default Registration;

@@ -5,16 +5,26 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <img src="/logo.png" alt="App Logo" className="w-32 h-32 mb-6" />
-      <h1 className="text-4xl font-bold mb-4">Welcome to Personality Test App</h1>
-      <p className="text-lg text-gray-600 mb-8">Discover your personality, career preferences, and more!</p>
-      <button
-        onClick={() => navigate("/register")} // Navigate to the registration page
-        className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700"
-      >
-        Get Started
-      </button>
+<div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-cyan-300 via-cyan-500 to-blue-900 text-white">      <div className="text-center">
+        <img
+          src="/logo.png"
+          alt="App Logo"
+          className="w-40 h-40 mb--8"
+        />
+        <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">
+          Welcome to the Personality Test App
+        </h1>
+        <p className="text-lg font-medium mb-8 max-w-md mx-auto drop-shadow-md">
+          Discover your personality, career preferences, and learning styles in
+          a fun and interactive way!
+        </p>
+        <button
+          onClick={() => navigate("/register")}
+          className="px-8 py-4 bg-white text-blue-600 font-bold rounded-full shadow-lg hover:bg-blue-100 hover:scale-105 transition-transform duration-300"
+        >
+          Get Started
+        </button>
+      </div>
     </div>
   );
 };

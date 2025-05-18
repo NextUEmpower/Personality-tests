@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supaBaseClient";
 
-const Registration = () => {
+export const Registration = () => {
   const [name, setName] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
   const [currentQualification, setCurrentQualification] = useState("");
@@ -36,10 +36,8 @@ const Registration = () => {
 
   return (
     <div
-      className="flex items-center h-screen bg-cover bg-center pl-30"
-      style={{
+className="flex items-center h-screen bg-cover bg-center pl-8"      style={{
         backgroundImage: "url('./public/bg.jpg')",
-        
       }}
     >
       <div className="flex flex-col items-center justify-center w-full max-w-lg bg-white bg-opacity-90 text-gray-800 rounded-lg shadow-lg p-8">

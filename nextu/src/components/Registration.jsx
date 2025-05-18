@@ -83,6 +83,9 @@ className="flex items-center h-screen bg-cover bg-center pl-8"      style={{
           Proceed to Personality Test
         </button>
       </div>
+       <div className="mt-150 text-black">
+        Image Credits: <a href="https://www.freepik.com/free-photo/copy-space-glasses-clipboard_7797787.htm#fromView=keyword&page=1&position=6&uuid=b1cb66a4-0658-4ca5-a1ba-a798dcc9c6a1&query=Registration+Background" target="_blank" rel="noopener noreferrer" className="underline">Freepik</a>
+        </div>
     </div>
   );
 };

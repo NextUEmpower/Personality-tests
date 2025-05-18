@@ -37,7 +37,7 @@ export const Registration = () => {
   return (
     <div
 className="flex items-center h-screen bg-cover bg-center pl-8"      style={{
-        backgroundImage: "url('./public/bg.jpg')",
+        backgroundImage: "url('/bg.jpg')",
       }}
     >
       <div className="flex flex-col items-center justify-center w-full max-w-lg bg-white bg-opacity-90 text-gray-800 rounded-lg shadow-lg p-8">

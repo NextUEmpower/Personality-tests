@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {Registration} from "./Registration";
-
 const LandingPage = () => {
   const navigate = useNavigate();
 
@@ -27,7 +26,7 @@ const LandingPage = () => {
           Get Started
         </button>
         <p className="mt-8 text-sm font-semibold text-white drop-shadow-md ">
-          Powered by <footer className="text-yellow-300 italic pb-10">NextU Empower</footer>
+          Powered by <span className="text-yellow-300 italic pb-10">NextU Empower</span>
         </p>
       </div>
     </div>
